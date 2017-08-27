@@ -1,14 +1,18 @@
 {% extends "base.html" %}
 
+{% block title %}
+Blog posts - {{ SITENAME }}
+{% endblock title %}
+
 {% block content %}
 
 <section class="content">
-
+  <h1 class="h1-title">Blog posts</h1>
   <ol id="postlist">
 
-    {% for article in articles_page.object_list %}
+      {% for article in articles_page.object_list %}
     <li class="post">
-        <header class="posttitle">
+      <header class="posttitle">
           <h3><a href="{{ SITEURL }}/{{ article.url }}"
                   rel="bookmark"
                   class="nodec"

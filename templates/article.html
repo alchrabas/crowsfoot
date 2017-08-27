@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}
+{{ article.title|striptags }} - {{ SITENAME }}
+{% endblock title %}
+
 {% block content %}
 
 <section class="content">
@@ -21,11 +25,33 @@
     </address>
     {% endif  %}
   </div><!-- .postinfo -->
+  
+  {% if article.status == "published" %}
+    {% include "share_links.html" %}
+  {% endif %}
 
   <div class="article">
     {{ article.content }}
   </div><!-- .content -->
-
+  
 </section>
+
+{% if article.status == "published" %}
+<div id='discourse-comments'></div>
+
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://forum.exeris.org/',
+                     discourseEmbedUrl: document.URL };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
+{% endif %}
+
+
+{% include "recent_posts.html" %}
 
 {% endblock %}

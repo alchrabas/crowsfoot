@@ -4,7 +4,12 @@
 /* General stuff. */
 
 body {
-    width: 800px;
+    width: 900px;
+}
+
+.content {
+    padding: 5px;
+    margin-top: 30px;
 }
 
 html { /* This stuff is for the sticky footer. */
@@ -12,6 +17,7 @@ html { /* This stuff is for the sticky footer. */
     position:relative;
     font-size: 18px;
     -webkit-font-smoothing: antialiased;
+     background-color: #e8f0f8; 
 }
 
 body {
@@ -23,20 +29,26 @@ body {
 /* Site header. */
 
 .sitebanner {
-    position: relative;
-    font-size: 18;
-    top: 15px;
+    font-size: 18px;
+    margin-left: 10px;
+    padding-top: 30px;
 }
 
 .siteheader {
-    margin-bottom: 30px;
+    padding-bottom: 12px;
     overflow: visible;
-    height: 200px;
+    border-bottom: 2px #888 solid;
 }
 
 .siteimage {
     float: left;
-    width: 230px;
+    width: 140px;
+    height: auto;
+}
+
+.siteimage-img {
+    width: 100%;
+    height: 100%;
 }
 
 .sitetitle {
@@ -60,24 +72,42 @@ body {
 
 .menu {
     font-size: 1.3em;
-    /* padding-left: 30px; */
+    padding-left: 25px;
 }
 
-.menu li {
-    display: inline;
+.menu-icons {
+    float: right;
+}
+
+.menu-icons li {
     margin-right: 10px;
+    display: inline;
+}
+
+.menu-links {
+    float: left;
+}
+
+.menu-links li {
+    margin-right: 20px;
+    display: inline;
+}
+
+.clearfix:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
 }
 
 /* Article list on index page. */
 
-.posttitle {
-    font-size: 1.6em;
+#postlist {
+    padding-left: 25px;
 }
 
-.posttitle a {
-    padding-left: 10px; /* Hack to dodge :hover issue. */
-    position: relative; /* Hack to dodge :hover issue. */
-    left: -10px; /* Hack to dodge :hover issue. */
+.posttitle {
+    font-size: 1.6em;
 }
 
 .postinfo {
@@ -98,9 +128,9 @@ body {
 
 /* Links. */
 
-a { /* Generic link styling, greyish and underlined. */
-    color: #2E2E2E;
-    text-decoration: underline;
+a { /* Generic link styling */
+    color: #0645ad;
+    text-decoration: none;
     -o-transition:color .2s ease-in-out;
     -webkit-transition:color .2s ease-in-out;
     -moz-transition:color .2s ease-in-out;
@@ -123,8 +153,7 @@ a:hover { /* Hover style: transition to orange. Cool! */
 /* Generic to all content. */
 
 .content ol, .content ul {
-    position: relative;
-    left: 40px;
+    padding-left: 20px;
     padding-bottom: 20px;
 }
 
@@ -148,7 +177,7 @@ sub {
 /* Article */
 
 .article {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 /* Lists */
@@ -168,17 +197,17 @@ sub {
 
 /* Headers. */
 
-.article h1 {
+.article h1, .h1-title {
     padding-bottom: 1em;
-    font-size: 1.4em;
+    font-size: 1.6em;
 }
 
-.article h2 {
+.article h2, .h2-title {
     padding-bottom: 0.9em;
     font-size: 1.2em;
 }
 
-.article h3 {
+.article h3, .h3-title {
     padding-bottom: 0.8em;
     font-size: 1em;
 }
@@ -194,8 +223,12 @@ sub {
 .content * img {
     display: block;
     margin: 0 auto 0 auto;
-    max-width: 600px;
+    max-width: 100%;
     height: auto;
+}
+
+.inline-image {
+    display: inline-block;
 }
 
 /* Blockquotes */
@@ -217,7 +250,7 @@ sub {
     margin: 0 0 0 0;
     margin-bottom: 20px;
     overflow: auto;
-    border: 1px solid lightgrey;
+    border: 1px solid #d3d3d3;
     border-radius: 5px;
 }
 
@@ -238,8 +271,86 @@ sub {
 
 footer {
     bottom: 0;
-    color: grey;
+    color: gray;
     font-size: .7em;
     height: 30px;
     position: absolute;
+    width: 900px;
 }
+
+footer p {
+    text-align: center;
+}
+
+.home-icons-container {
+    text-align:center;
+    margin: 60px 60px;
+}
+
+.home-icon {
+    display: inline-block;
+    width:25%;
+}
+
+.home-icon img {
+    width:100px;
+    height:auto;
+    margin:auto;
+}
+
+.recent-posts {
+    padding: 10px;
+    margin-top: 80px;
+}
+
+.recent-post-title {
+    font-size: 1.1em;
+}
+
+/**
+ * PLUGINS - share posts
+ */
+
+.post-share-links {
+    text-align: right;
+}
+
+.post-share-links img {
+    display: inline-block;
+    margin-left: 6px;
+}
+
+@media all and (max-width:900px) {
+    body, footer {
+        width: 100%;
+    }
+
+    .home-image {
+        width:50%;
+    }
+}
+
+@media all and (max-width:900px) {
+    body, footer {
+        width: 100%;
+    }
+
+    .home-icons-container {
+        margin: 5px;
+    }
+
+    .home-icon {
+        width:50%;
+    }
+
+    .home-icon img {
+        margin:auto;
+    }
+}
+
+@media all and (max-width:300px) {
+    .home-icon {
+        width:100%;
+    }
+}
+
