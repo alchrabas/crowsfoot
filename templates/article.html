@@ -36,11 +36,11 @@
   
 </section>
 
-{% if article.status == "published" %}
+{% if DISCOURSE_EMBEDDED_URL and article.status == "published" %}
 <div id='discourse-comments'></div>
 
 <script type="text/javascript">
-  DiscourseEmbed = { discourseUrl: 'https://forum.exeris.org/',
+  DiscourseEmbed = { discourseUrl: {{ DISCOURSE_EMBEDDED_URL }},
                      discourseEmbedUrl: document.URL };
 
   (function() {
