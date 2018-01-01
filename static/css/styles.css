@@ -328,12 +328,6 @@ footer p {
     .home-image {
         width:50%;
     }
-}
-
-@media all and (max-width:900px) {
-    body, footer {
-        width: 100%;
-    }
 
     .home-icons-container {
         margin: 5px;
@@ -345,6 +339,10 @@ footer p {
 
     .home-icon img {
         margin:auto;
+    }
+
+    .sitetitle {
+        font-size: 1.5em;
     }
 }
 
