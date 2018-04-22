@@ -7,7 +7,9 @@
       <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css' />
       <link href='//fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'/>
       <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:200,400,700' rel='stylesheet' type='text/css'/>
-      <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/icons.css"/>
+      <script defer src="{{ SITUEURL }}/theme/js/fontawesome.min.js"></script>
+      <script defer src="{{ SITUEURL }}/theme/js/fa-solid.min.js"></script>
+      <script defer src="{{ SITUEURL }}/theme/js/fa-brands.min.js"></script>
       <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/styles.css"/>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -53,22 +55,25 @@
           </ul>
           <ul class="menu-icons">
             {% if EMAIL_ADDRESS %}
-              <li><a class="nodec icon-mail-alt" href="mailto:{{ EMAIL_ADDRESS }}" title="Email"></a></li>
+              <li><a href="mailto:{{ EMAIL_ADDRESS }}" title="Email"><i class="nodec fas fa-envelope"></i></a></li>
             {% endif %}
             {% if GITHUB_ADDRESS %}
-              <li><a class="nodec icon-github" href="{{ GITHUB_ADDRESS }}" title="GitHub"></a></li>
+              <li><a href="{{ GITHUB_ADDRESS }}" title="GitHub"><i class="nodec fab fa-github"></i></a></li>
             {% endif %}
             {% if SO_ADDRESS %}
-              <li><a class="nodec icon-stackoverflow" href="{{ SO_ADDRESS }}" title="Stack Overflow"></a></li>
+              <li><a href="{{ SO_ADDRESS }}" title="Stack Overflow"><i class="nodec fab fa-stackoverflow"></i></a></li>
             {% endif %}
             {% if TWITTER_ADDRESS %}
-              <li><a class="nodec icon-twitter" href="{{ TWITTER_ADDRESS }}" title="Twitter"></a></li>
+              <li><a href="{{ TWITTER_ADDRESS }}" title="Twitter"><i class="nodec fab fa-twitter"></i></a></li>
             {% endif %}
             {% if FB_ADDRESS %}
-              <li><a class="nodec icon-facebook" href="{{ FB_ADDRESS }}" title="Facebook"></a></li>
+              <li><a href="{{ FB_ADDRESS }}" title="Facebook"><i class="nodec fab fa-facebook"></i></a></li>
+            {% endif %}
+            {% if LINKEDIN_ADDRESS %}
+              <li><a href="{{ LINKEDIN_ADDRESS }}" title="LinkedIn"><i class="nodec fab fa-linkedin"></i></a></li>
             {% endif %}
             {% if FEED_RSS %}
-              <li><a class="nodec icon-rss" href="/{{ FEED_RSS }}" title="RSS"></a></li>
+              <li><a href="/{{ FEED_RSS }}" title="RSS"><i class="nodec fas fa-rss"></i></a></li>
             {% endif %}
           </ul>
         </nav>
