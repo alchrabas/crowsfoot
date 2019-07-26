@@ -252,6 +252,7 @@ sub {
     overflow: auto;
     border: 1px solid #d3d3d3;
     border-radius: 5px;
+    max-width: 100%;
 }
 
 .article pre {
